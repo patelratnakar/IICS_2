@@ -55,7 +55,7 @@ jobs:
         run: git config --global user.email "ratnakarpatelz@gmail.com"; git config --global user.name "Ratnakar"
 
       - name: Commit changes to UAT
-        run: cd ./Explore/TEST_CASE; git fetch --all; git cherry-pick --strategy=recursive -X theirs ${COMMIT_HASH}; git push
+        run: cd ./Explore/; git fetch --all; git cherry-pick --strategy=recursive -X theirs ${COMMIT_HASH}; git push
 
       - name: Get the latest UAT to commit hash
-        run: cd ./Explore/TEST_CASE; git pull; echo "COMMIT_HASH=$(git log -1 --pretty=format:%H)" >> $GITHUB_ENV
+        run: cd ./Explore/; git pull; echo "COMMIT_HASH=$(git log -1 --pretty=format:%H)" >> $GITHUB_ENV
